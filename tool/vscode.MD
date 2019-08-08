@@ -51,7 +51,7 @@ Gist id配置
 
 6、测试是否成功
 
-shift+ctrl+u
+shift+alt+u
 
 ![](/tool/img/14.jpg)
 
@@ -70,6 +70,8 @@ github显示如下:
 
 方法二：
 
-shift+ctrl+d
+shift+alt+d
 
 输入Gist id
+
+![](/tool/img/16.jpg)
