@@ -6,5 +6,5 @@
 
 
 #### [Travis CI & github 自动发布npm插件](/tool/TravisCI.MD)
-#### [Settings Sync & github 同步 vscode配置](/tool/vscode.md)
+#### [Settings Sync & github 同步 vscode配置](/tool/vscode.MD)
 
