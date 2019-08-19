@@ -21,17 +21,18 @@ exit
 ```
 * mongoose操作数据库
     * 数据库知识点
-        - | 关系型 |  非关系型  
-        -|-|-
+
+        - | 关系型 |  非关系型  |
+        -|-|-|
         描述|业务逻辑都可以归结到二维表中<br>通过表与表之间建立关系来描述业务<br>基于 SQL 来查询 | 非数据结构比较简单<br>大多数不需要支持复杂的查询 |
         常见类型 | Oracle<br>Microsoft SQL Server<br>MySQL、MariaDB | MongoDB（文档导向，可直接存储对象，不需要限定存储的数据格式 ）<br>Redis（内存的可持久化的键值对存储数据库） <br>Memcached（分布式高速缓存系统，基于键值存储，用于应用的高速缓存，不支持持久化）|
 
 * 扫码登入：Oauth授权
     * [小程序登入](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)
 
-    ![1](/static/wechat-project/api-login.jpg)
+    ![小程序登入](/static/wechat-project/api-login.jpg)
     * 扫码登入
-    ![1](/static/wechat-project/scan.jpg)
+    ![扫码登入](/static/wechat-project/scan.jpg)
 
 * koa路由处理koa-router
 
@@ -53,8 +54,9 @@ exit
     * 对资源的各种操作不会改变资源标识 。
     * 所有的操作都是*无状态*的（服务器不保存客户的上下文）
         * 状态存储
-            - | 概念 | 用法 
-            -|-|-|-
+
+            - | 概念 | 用法 |
+            -|-|-|-|
             cookie|仅仅是浏览器实现的一种数据存储功能(用户登录数据禁止随意修改)|-|-|
             session|session 只保存在服务器上，是服务器端使用的一种记录客户端状态的机制|客户端 cookie 里存 userid<br>服务端 session 存用户数据<br>客户端访问服务端的时候，根据 userid 找对应用户数据|-|
             token|在客户端一般存放于localStorage，cookie，或sessionStorage中。在服务器一般存于数据库中。token <br>· uid: 用户唯一身份标识<br>· time: 当前时间的时间戳<br>· sign: 签名, 使用hash/encrypt 压缩成定长的十六进制字符串，以防止第三方恶意拼接<br>· 固定参数(可选): 将一些常用的固定参数加入到 token 中是为了避免重复查库<br>|也称作令牌, 注意在客户端里存 userid（也就是token）、用户信息、密文<br>服务端只有一段加密代码，用来判断当前加密后的密文是否和客户端传递过来的密文一致，如果不一致，就是客户端的用户数据被篡改了，如果一致，就代表客户端的用户数据正常且正确<br>token 认证流程与 cookie 类似：<br>1. 用户登录，成功后服务器返回Token给客户端。<br>2. 客户端收到数据后保存在客户端<br>3. 客户端再次访问服务器，将 token 放入 headers 中<br>4. 服务器端校验。校验成功则返回请求数据，校验失败则返回错误码（401）|
