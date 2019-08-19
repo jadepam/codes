@@ -11,8 +11,7 @@
 
 ## 项目实战系列
 
-#### [微信小程序全栈开发]
-* [node+koa2 搭建小程序服务端](/book/koa2-serve.MD)
-* [react 搭建web管理后台](/book/react-admin.MD)
-* [wepay 开发小程序](/book/wepay-app.MD)
+#### [微信小程序全栈开发](/book/wechat-project-info.MD)
+* [node+koa2 +ssr(Nextjs)搭建小程序服务端+管理后台](/book/koa2-serve.MD)
+* [wepy 开发小程序](/book/wepy-app.MD)
 * [nignx服务器配置](/book/nignx-config.MD)
