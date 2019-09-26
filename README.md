@@ -5,7 +5,8 @@
 #### [Travis CI & github 自动发布npm插件](/book/TravisCI.MD)
 #### [Settings Sync & github 同步 vscode配置](/book/vscode.MD)
 
-## 编程
+## 编程leetcode(/book/leetcode.MD)
+
 
 #### [常用算法](/book/algorithm.MD)
 
