@@ -1,3 +1,9 @@
+/**
+ * @param {Array} nums: arr 
+ * @param {Number} target: sum
+ * @return {Array} 下标
+ 
+ */
 const twoSum = (nums, target) => {
     const map = {};
     for (let i = 0; i < nums.length; i++) {

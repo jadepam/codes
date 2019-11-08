@@ -42,35 +42,49 @@
   
 
 # leetcode题目练习
-- 1. Two Sum
-    ```
-    Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+- 1. [Two Sum](https://leetcode.com/problems/two-sum/)
+   - 数组nums中，若两数之和等于target，返回两数下标。map对象转化存储数组val:index，循环数组nums，当target-nums[i]包含在map中时，返回[map[target-nums[i]], i]
+   ```
+   const twoSum = (nums, target) => {
+    const map = {};
+    for (let i = 0; i < nums.length; i++) {
+      const another = target - nums[i];
+  
+      if (another in map) {
+        return [map[another], i];
+      }
+  
+      map[nums[i]] = i;
+    }
+  
+    return null;
+  };
+   ```
+## 链表&算法
+- 24. [Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
+   - 链表相邻数反转：
 
-    You may assume that each input would have exactly one solution, and you may not use the same element twice.
+- 25. [Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/)
+- 141. [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
+    - 判断是否有环：
+- 142. [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
+- 206. [Reverse Linked List](https://leetcode.com/problems/swap-nodes-in-pairs/)
+ - 链表翻转
+```
+var reverseList = function(head) {
+    let cur = head
+    let next = head
+    let prev = null
+    while(cur){
+        next =next.next  
+        cur.next = prev 
+        prev = cur      
+        cur= next  
+    }
+    return prev
+}
+```
 
-    Example:
-
-    Given nums = [2, 7, 11, 15], target = 9,
-
-    Because nums[0] + nums[1] = 2 + 7 = 9,
-    return [0, 1].
-    ```
-
-- 567. Permutation in String
-    ```
-    Given two strings s1 and s2, write a function to return true if s2 contains the permutation of s1. In other words, one of the first string's permutations is the substring of the second string.
-    Example 1:
-
-    Input: s1 = "ab" s2 = "eidbaooo"
-    Output: True
-    Explanation: s2 contains one permutation of s1 ("ba").
-    Example 2:
-
-    Input:s1= "ab" s2 = "eidboaoo"
-    Output: False
-
-    Note:
-
-    The input strings only contain lower case letters.
-    The length of both given strings is in range [1, 10,000].
-    ```
+## 
+- 567. [Permutation in String](https://leetcode.com/problems/permutation-in-string/)
+  
