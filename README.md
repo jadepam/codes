@@ -74,21 +74,30 @@
 - 6、函数提升的级别要比变量高
 
 ### js函数式编程与测试
-#### 函数式编程（lodash库）
-  纯函数：纯函数是这样一种函数，即相同的输入，永远会得到相同的输出，而且没有任何可观察的副作用。通过延迟执行的方式把不纯的函数转换为纯函数。
-  函数柯里化：只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数
+#### [函数式编程]()（lodash\Ramda库）
+  - 纯函数：纯函数是这样一种函数，即相同的输入，永远会得到相同的输出，而且没有任何可观察的副作- 用。通过延迟执行的方式把不纯的函数转换为纯函数。
+  - 函数柯里化：只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数
+  - [声明式代码示例](./code/flickr/index.html)：声明式的、可组合的方式创建的示例应用
+  - Hindley-Milner 类型签名: 推断函数可能的实现，还能够给我们带来自由定理
+    ```
+    array.reduce(function(total, currentValue, currentIndex, arr), initialValue) initialValue：传递给函数的初始值
+    reduce :: (b -> a -> b) -> b -> [a] -> b
+    第一个参数为function：f,函数为(b,a)=>b，其中传参数b类等于total，参数a类等于currentValue，返回的b为下一次循环的参数a
+    第二个参数为b，b作为参数传入函数f
+    第三参数为数组xs，参数a的集合[a]，其中每个a作为参数传入函数f
+    最终返回b：第一个参数函数的输出就是 reduce 函数的输出
 
+    ```
 #### 测试
 ##### 单元测试
 
   - 单元测试框架
   ```
-    better-assert(TDD断言库Github 190star 19fork) 
-    should.js(BDD断言库Github 2295star 194fork) 
-    expect.js(BDD断言库Github 1391star 162fork) 
-    chai.js(TDD BDD双模Github 2823star 271fork) 
-    Jasmine.js(BDD Github10723star1680fork) 
     Node.js本身集成 require(“assert”); 
+    should.js(BDD断言库) 
+    expect.js(BDD断言库) 
+    chai.js(TDD BDD双模) 
+    Jasmine.js(BDD) 
     Intern 更是一个大而全的单元测试框架 
     QUnit 一个游离在jQuery左右的测试框架 
     Macaca 一套完整的自动化测试解决方案 国产神器来自阿里
@@ -158,13 +167,29 @@
 ## 前端工程化与持续构建
 
 ### webpack：趋势开箱即用
-
+  ```
+  CommonJS：是一个模块化的标准，Node.js在使用的模块化标准。适用与后端开发的标准。
+  AMD（Async Module Definition）：在CommonJS基础上衍生出来的适用于前端开发的模块化标准。 
+  特点：预加载，第一次访问时，将所有的文件都加载出来。
+  优点：第一次访问完成以后，再次访问速度会很快
+  缺点：第一次加载，需要的时间会比较长
+  代表：requirejs
+  CMD（Common Module Definition）：在CommonJS基础上衍生出来的适用于前端开发的模块化标准。 
+  特点：懒加载，只有使用到的时候，才会加载对应的模块。
+  优点：第一次访问速度会比较快
+  缺点：再次访问其他模块时会比较慢。
+  代表：seajs
+  ```
 - Webpack1到2最大的升级是tree-shaking，其次是配置文件的对象化，再其次包括插件的写法优化。Webpack2到3的最大升级是scope-hoisting。3到4简化了整个打包配置操作
-- code-spliting(代码分割，把代码分离成 Chunk，按需加载)
-    webpack2：中懒加载打包会连同样式以内联的形式一起打入JS中，这样的好处在于公共样式也被细化抽离，但是可能会造成样式冗余。
+- code-spliting(代码分割，把代码分离成 Chunk，分割的节点进行异步加载，类似require.js的按需异步加载)
+    webpack2：懒加载打包会连同样式以内联的形式一起打入JS中，这样的好处在于公共样式也被细化抽离，但是可能会造成样式冗余。
     webpack3：则提供了ExtractTextPlugin中提供了抽取公共样式的方法，公共样式可以额外抽离。
     webpack4：去除CommonsChunkPlugin，新增optimization.splitChunks
-
+    ```
+      ps:　require.js的诞生，就是为了解决这两个问题：
+      （1）实现js文件的异步加载，避免网页失去响应；
+      （2）管理模块之间的依赖性，便于代码的编写和维护
+    ```
 - tree-shaking(摇树优化)依赖于ES6
     ```
     使用tree-shaking，它只打包有用的方法，没有用的方法则不会进行打包。
@@ -201,6 +226,7 @@
     
   #### git自动化部署
   #### [Travis CI & github 自动发布npm插件](/book/TravisCI.MD)
+  #### [gitlab &gitlab-ci自动化部署](/book/gitlab-ci.MD)
   #### [Settings Sync & github 同步 vscode配置](/book/vscode.MD)
   #### 代码检查工作流：[husky](https://github.com/typicode/husky)（避免糟糕的git commit） 和 [lint-staged](https://github.com/okonet/lint-staged)（执行所需脚本）
 
