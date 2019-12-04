@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <section>
+        <div>
+            <div class="center">
+
+            </div>
+        </div>
+        <div>
+        </div>
+
+        <div>
+        
+        </div>
+    </section>
+    
+    <footer>
+
+    </footer>
+
+    <style>
+     body{
+        margin: 0;
+        padding: 0;
+     }
+     header, footer{
+         height: 10vh;
+         background: black;
+     }
+
+     section{
+         overflow: hidden;
+         height: 80vh;
+     }
+     section>div{
+         float: left;
+     }
+     section>div:nth-child(2){
+        height: 9999px;
+        margin-bottom: -9999px;
+        width: 100px;
+        background: forestgreen;
+        margin-left:-100% ;
+     }
+     section>div:nth-child(1){
+        height: 100%;
+        width: 100%;
+        background: red;
+        text-align: center;
+     }
+     .center{
+        margin:0px 100px 0px 100px;
+     }
+     section>div:last-child{
+        width: 100px;
+        height: 200px;
+        background: blueviolet;
+        z-index: 999;
+        margin-left: -100px;
+     }
+    </style>
+</body>
+</html>

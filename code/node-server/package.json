@@ -1,0 +1,9 @@
+{
+  "scripts": {
+   "serve": "node serve.js",
+   "client":"node client_1.js"
+ },
+  "dependencies": {
+    "@metarhia/jstp": "^2.3.0"
+  }
+}

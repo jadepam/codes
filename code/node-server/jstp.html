@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/@metarhia/jstp@latest/dist/jstp.umd.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <input type="text" v-model="message" />
+    <button v-on:click="send">发送</button>
+    <button v-on:click="close">close</button>
+    <button v-on:click="link">link</button>
+  </div>
+
+  <script>
+    const APP_NAME = "chatApp";
+    const PORT = 3000;
+    const HOSTNAME = "192.168.8.70";
+    const username = "a";
+    const password = "userid";
+
+    let sendapp = null;
+    let connection = null;
+    
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "Parent"
+      },
+      methods: {
+        send: function (event) {
+          sendapp.chat.sendMessage(
+            `hello from ${username}:${this.message}`,
+            err => {
+              if (err) console.error(err);
+            }
+          );
+          
+        },
+        close() {
+          sendapp.chat.closeSend( err => {
+              if (err) console.error(err);
+            });
+        },
+        link() {
+          serve();
+        }
+      }
+    });
+
+    const serve=  api.jstp.ws.connectAndInspect(
+            APP_NAME,
+            null,
+            ["auth", "chat"],
+            // {},
+            `ws://${HOSTNAME}:${PORT}`,
+            (error, connection, app) => {
+              sendapp = app;
+              if (error) {
+                console.error(error);
+                connection.close()
+                return;
+              }
+              console.log(
+                "error, connection, app",
+                // api.jstp.Session
+              );
+
+              app.auth.register(username, password, error => {
+                if (error) {
+                  return;
+                }
+
+                console.log("Registered");
+
+                app.auth.login(
+                  username,
+                  password,
+                  error => {
+                    if (error) {
+                      console.error(error);
+                      return;
+                    }
+
+                    console.log(
+                      `Logged in as ${username}`
+                    );
+                    app.chat.on(
+                      "message",
+                      (sender, message) =>
+                      console.log(
+                        `${sender}: ${message}`
+                      )
+                    );
+                    sendapp.chat.sendMessage(
+                      `hello from ${username}:${this.message}`,
+                      err => {
+                        if (err){
+                          connection.close()
+                          console.error(err);
+                        } 
+                      }
+                    );
+                  }
+                );
+              });
+            }
+          );
+  </script>
+</body>
+
+</html>
