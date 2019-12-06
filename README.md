@@ -292,3 +292,11 @@ main 指令使用查看工具
 ![img](/static/wxapp.png)
 
 2、[JSTP](https://metarhia.github.io/jstp/api/server/) 实现简单聊天室[DOM](/code/node-server/README.md)
+
+
+------------------------------
+```
+git remote -v
+git push github master
+git push gitee master
+```

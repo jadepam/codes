@@ -290,11 +290,16 @@ on",	function(event)	{
 
 
 ### 4.[css houdini/js in css ](https://css-houdini.rocks/)
+[兼容性](https://ishoudinireadyyet.com)
 ![img](./../code/css/images/houdini.png)
 
-[兼容性](https://ishoudinireadyyet.com)
+
+
+
 
 6.css 重绘 重排 
+![img](./../code/css/images/CSS-HOUDINI-2.png)
+
 
 ### 7.css next
 [css-doodle/css in js](https://css-doodle.com/)
