@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>css3-transform</title>
+    </head>
+    <body>
+        <ul class="box">
+            <li style="background: wheat; transform-origin: top; transform: rotateX(90deg);">1</li>
+            <li style="background: gray; transform-origin: bottom;transform: rotateX(270deg);">2</li>
+            <li style="background: lightblue; transform-origin: left; transform: rotateY(-90deg);">3</li>
+            <li style="background: rgb(0, 255, 106);transform-origin: right; transform: rotateY(90deg);">4</li>
+            <li style="background: blueviolet; transform-origin: center; transform: translateZ(100px);">5</li>
+            <li style="background: yellow;">6</li>
+        </ul>
+
+       <ul class="circle">
+           <li style="transform: rotateX(60deg);"></li>
+           <li style="transform: rotateX(120deg);"></li>
+           <li style="transform: rotateX(180deg);"></li>
+           <li style="transform: rotateX(240deg);"></li>
+           <li style="transform: rotateX(300deg);"></li>
+           <li style="transform: rotateX(360deg);"></li>
+       </ul>
+
+       <ul class="rotate">
+           <li style="transform: rotateY(60deg) translateZ(86.6025403784px)"></li>
+           <li style="transform: rotateY(120deg) translateZ(86.6025403784px)"></li>
+           <li style="transform: rotateY(180deg) translateZ(86.6025403784px)"></li>
+           <li style="transform: rotateY(240deg) translateZ(86.6025403784px)"></li>
+           <li style="transform: rotateY(300deg) translateZ(86.6025403784px)"></li>
+           <li style="transform: rotateY(360deg) translateZ(86.6025403784px)"></li>
+           <li class="top" style="transform-origin: top;transform: rotateX(90deg)">
+                <span style="transform-origin: top; transform: rotateZ(60deg);"></span>
+                <span style="transform-origin: top; transform: rotateZ(120deg);"></span>
+                <span style="transform-origin: top; transform: rotateZ(180deg);"></span>
+                <span style="transform-origin: top; transform: rotateZ(240deg);"></span>
+                <span style="transform-origin: top; transform: rotateZ(300deg);"></span>
+                <span style="transform-origin: top; transform: rotateZ(360deg);"></span>
+           </li>
+           <li class="bottom"  style="transform-origin: top;transform: rotateX(90deg) translateZ(100px)">
+                <span style="transform-origin: top; transform: rotateZ(60deg);"></span>
+                <span style="transform-origin: top; transform: rotateZ(120deg);"></span>
+                <span style="transform-origin: top; transform: rotateZ(180deg);"></span>
+                <span style="transform-origin: top; transform: rotateZ(240deg);"></span>
+                <span style="transform-origin: top; transform: rotateZ(300deg);"></span>
+                <span style="transform-origin: top; transform: rotateZ(360deg);"></span>
+           </li>
+           
+       </ul>
+        </div>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+                width: 100vw;
+                height: 100vh;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                background: #6633991c;
+            }
+            ul.box,ul.triangle,ul.circle,ul.rotate{
+                margin: auto;
+                transform-style: preserve-3d;
+                transform: rotateX(30deg) rotateY(30deg);
+                position: relative;
+                transition: all 3s;
+                backface-visibility: visible;
+                animation: auto 5s infinite;
+            }
+            ul.box li {
+                position: absolute;
+                display: flex;
+                width: 100px;
+                height: 100px;
+                background: red;
+                justify-content: center;
+                align-items: center;
+                opacity: 0.5;
+            }
+
+
+           
+            ul.circle li{
+                position: absolute;
+                display: block;
+                width: 100px;
+                height: 100px;
+                border-radius: 100%;
+                border: 1px solid rebeccapurple;
+                box-shadow: 0px 1px 20px 20px #6633991c;
+                background: #6633991c;
+                opacity: .5;
+            }
+
+            ul.rotate li{
+                display: block;
+                position: absolute;
+                display: block;
+                width: 100px;
+                height: 100px;
+                background: rebeccapurple;
+                opacity: .5;
+            }
+            ul.rotate li.top,ul.rotate li.bottom{
+                position: relative;
+                background: none;
+                display: flex;
+            }
+            ul.rotate li.top span,ul.rotate li.bottom span{
+                position: absolute;
+                display: block;
+                width:0;
+                height:0;
+                border-right:50px solid transparent;
+                border-left:50px solid transparent;
+
+                
+            }
+            ul.rotate li.top span{                
+                border-bottom:86.6025403784px solid green;}
+            ul.rotate li.bottom span{
+                border-bottom:86.6025403784px solid gold;
+            }
+            @keyframes auto{
+                0%{
+                    transform: rotateX(30deg) rotateY(30deg)
+                }
+                50%{
+                    transform: rotateX(120deg) rotateY(120deg)
+                }
+                100%{
+                    transform: rotateX(30deg) rotateY(30deg)
+                }
+            }
+        </style>
+    </body>
+</html>

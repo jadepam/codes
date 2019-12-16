@@ -1,4 +1,5 @@
-### 1.css3 技巧
+# css知识点
+## 1. css3 技巧
 
 -   早期的双飞翼布局+假等高 +CSS HACK、zoom 缩放
 
@@ -217,7 +218,7 @@ Flex Box 由伸缩容器和伸缩项目组成。通过设置元素的 display �
 - 蒙版效果（遮罩） -webkit-mask-image
 - shape-outside多边形文字环绕
 
-### 2.css3d&html5
+## 2.css3d&html5
 
 HTML5: 地理位置 \ 重力感应 \ 陀螺仪
 
@@ -270,8 +271,6 @@ on",	function(event)	{
 3.clearWatch()清除位置监视
 ```
 
-[CSS3 3D 模型]()
-
 [结合 Touch 事件](./../code/css/touch.html)
 
 ```
@@ -284,24 +283,23 @@ on",	function(event)	{
 
 [CSS3D 库](./../code/css/3D.html) :css3d-engine.js()
 
-### 3.css 矩阵 matrix()和matrix3d()
+[实例纯css3 3D立体](./../code/css/3D/index.html)
+
+## 3.css 矩阵 matrix()和matrix3d()
 
 矩阵数学概念\CSS 中矩阵应用复杂的 CSS 矩阵
 
 
-### 4.[css houdini/js in css ](https://css-houdini.rocks/)
+## 4.[css houdini/js in css ](https://css-houdini.rocks/)
 [兼容性](https://ishoudinireadyyet.com)
 ![img](./../code/css/images/houdini.png)
 
 
-
-
-
-6.css 重绘 重排 
+## 5.css 重绘 重排 
 ![img](./../code/css/images/CSS-HOUDINI-2.png)
 
 
-### 7.css next
+## 6.css next
 [css-doodle/css in js](https://css-doodle.com/)
 
-9.css 分层理论 oocss acss bem
+## 7.css 分层理论 oocss acss bem
