@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Pikachu</title>
+    </head>
+    <body>
+        <div class="pikachu">
+            <div class="head">
+                <div class="ear">
+                    <div><span></span></div>
+                    <div><span></span></div>
+                </div>
+                <div class="face">
+                    <div class="eyes">
+                        <div><span></span></div>
+                        <div><span></span></div>
+                    </div>
+                    <div class="nosemouth">
+                        <div class="nose"></div>
+                        <div class="mouth"></div>
+                    </div>
+                    <div class="blusher">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            body {
+                width: 100vw;
+                height: 100vh;
+                margin: 0;
+                display: flex;
+                background: #00000042;
+            }
+            .pikachu {
+                margin: auto;
+            }
+            .face {
+                border-top-left-radius: 100%;
+                border-top-right-radius: 100%;
+                border-bottom-left-radius: 80%;
+                border-bottom-right-radius: 80%;
+                border: 1px #000 solid;
+                width: 20vw;
+                height: 21vw;
+                background: #ffe000;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                position: relative;
+                z-index: 999;
+            }
+            .blusher,
+            .eyes,
+            .ear {
+                display: flex;
+                width: 100%;
+            }
+            .ear div {
+                width: 5vw;
+                height: 12vw;
+                background: #000;
+                border-top-left-radius: 90%;
+                border-top-right-radius: 90%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
+            .ear div:first-child {
+                transform: rotate(-30deg);
+                animation: left-ear 2s linear infinite;
+            }
+            .ear div:last-child {
+                transform: rotate(30deg);
+                animation: right-ear 2s linear infinite;
+            }
+            .ear div span {
+                display: block;
+                background: #ffe000;
+                width: 4vw;
+                height: 10vw;
+            }
+            .ear div:first-child span{
+                border-top-left-radius: 100%;
+                border-top-right-radius: 50%;
+            }
+            .ear div:last-child span{
+                border-top-left-radius: 50%;
+                border-top-right-radius: 100%;
+            }
+            .ear {
+                justify-content: space-between;
+                position: relative;
+                bottom: -5vw;
+            } 
+            .eyes {
+                justify-content: space-around;
+                align-items: center;
+                animation: blink 2s linear infinite;
+            }
+            .eyes div {
+                width: 5vw;
+                height: 5vw;
+                background: #000;
+                border-radius: 100%;
+                position: relative;
+            }
+            .eyes div span {
+                width: 2vw;
+                height: 2vw;
+                background: #fff;
+                border-radius: 100%;
+                display: block;
+                position: absolute;
+                top: 0.5vw;
+                right: 1vw;
+            }
+            .nosemouth {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+            .nose {
+                background: #000;
+                width: 2vw;
+                height: 1vw;
+                border-bottom-left-radius: 100%;
+                border-bottom-right-radius: 100%;
+                position: relative;
+                z-index: 1;
+            }
+            .mouth {
+                justify-content: center;
+                display: flex;
+                margin-top:1vw;
+            }
+            .mouth::after {
+                content: "";
+                display: block;
+                width: 4vw;
+                height: 1vw;
+                border: 2px solid #000;
+                transform: rotate(20deg);
+                border-top: none;
+                border-left: none;
+                border-bottom-right-radius: 76% 96%;
+                background: #ffe000;
+            }
+            .mouth::before {
+                content: "";
+                display: block;
+                width: 4vw;
+                height: 1vw;
+                border: 2px solid #000;
+                transform: rotate(-20deg);
+                border-top: none;
+                border-right: none;
+                border-bottom-left-radius: 76% 96%;
+                background: #ffe000;
+            }
+            .blusher {
+                width: 100%;
+
+                position: relative;
+                bottom: 2vw;
+            }
+            .blusher span {
+                border-radius: 100%;
+                width: 6vw;
+                height: 6vw;
+                background: #ff3312;
+                border: 1px #000 solid;
+                display: block;
+                position: absolute;
+            }
+            .blusher span:first-child {
+                transform: rotate(90deg);
+                left: -1vw;
+            }
+            .blusher span:last-child {
+                transform: rotate(-90deg);
+                right: -1vw;
+            }
+           
+            @keyframes blink {
+                0% {
+                    transform: scaleY(0);
+                }
+                5% {
+                    transform: scaleZ(1.2);
+                }
+                100% {
+                    transform: scaleZ(1.2);
+                }
+            }
+            @keyframes left-ear {
+                10% {
+                    transform: rotate(-25deg);
+                }
+                90% {
+                    transform: rotate(-30deg);
+                }
+            }
+            @keyframes right-ear {
+                10% {
+                    transform: rotate(25deg);
+                }
+                90% {
+                    transform: rotate(30deg);
+                }
+            }
+        </style>
+    </body>
+</html>

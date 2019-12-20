@@ -23,6 +23,7 @@
       2 margin-left:-100%
 
       3 margin-left:-本身宽度
+
     ```
 
     假等高（解决等高问题）
@@ -32,7 +33,8 @@
         height: 9999px;
         margin-bottom: -9999px;
     ```
-
+    css自动居中：父标签display:flex，搭配子标签margin:auto
+    
     CSS HACK
 
     ```
