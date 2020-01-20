@@ -65,21 +65,22 @@ git版本管理：
 
 ### [常用算法](/book/algorithm.MD)
 
+
+### npm install graphql
 ## 项目实战系列
 
 -   [react16.8 中 hooks 结合 dav.js 使用方法](/code/reacthooks/src/pages/test/hooks.js)
 -   [React16.8+Next.js+Koa2 开发 Github 全栈项目](/book/react16.8.MD)
-
+-   [Ant Design Pro 4.0实战]()
 #### [微信小程序全栈开发](/book/wechat-project-info.MD)
-
 -   [node+koa2 +ssr(Nextjs)搭建小程序服务端+管理后台](/book/koa2-serve.MD)
 -   [wepy 开发小程序](/book/wepy-app.MD)
 -   [nignx 服务器配置](/book/nignx-config.MD)
 
 ### [node 爬虫]
 
--   [node-crawler 初体验]()
-
+- [node-crawler 初体验](https://github.com/jadepam/node-crawer)
+- node搭建ws实现报表大屏互动
 #### 好玩的小项目
 
 1、即刻换颜小程序 （头像 DIY）
@@ -88,6 +89,9 @@ git版本管理：
 
 2、[JSTP](https://metarhia.github.io/jstp/api/server/) 实现简单聊天室[DOM](/code/node-server/README.md)
 
+## 新技术
+### graphql 
+npm install graphql
 ------------------------------
 ```
 git remote -v

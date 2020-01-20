@@ -1,0 +1,8 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+code/antui
+code/typescript
+跨域通信.md
+docker.md
+react.md

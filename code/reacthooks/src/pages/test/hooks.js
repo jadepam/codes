@@ -1,4 +1,5 @@
 //react hooks api + dvajs 实例
+//hooks让函数式组件具有类能力
 /* eslint-disable */
 import React, { Component,createContext,memo,useState, useEffect,useContext,useReducer,useCallback,useMemo,useRef,useImperativeHandle,useLayoutEffect,useDebugValue, } from 'react';
 import { connect } from 'dva';
@@ -22,18 +23,27 @@ useContext(MyContext) 只是让你能够读取 context 的值以及订阅 contex
 * memo,react 16.6新增的方法 React.memo() 可以和 functional component一起使用，局部渲染更新
 调用了 useContext 的组件总会在 context 值变化时重新渲染。如果重渲染组件的开销较大，你可以 通过使用 memoization 来优化。
 
-* useEffect
+* useEffect(fn,[])
 两个参数，第一个参数为回调方法；第二个参数为执行条件，该值改变后才会重新执行，[]空数组时只执行一次 
 useEffect会延迟调用，执行时间为组件渲染完成后，不应在函数中执行阻塞浏览器更新屏幕的操作
 作用：管理这些副作用（side-effects）的地方，例如：获取数据、手动操作 DOM、订阅一个流（RxJS）
 
+合并的生命周期componentDidMount、componentDidUpdate、和 componentWillUnmount
+
+包含return时，包含componentWillUnmount
 
 *useCallback&useMemo：
 useCallback和useMemo的参数跟useEffect一致，他们之间最大的区别有是useEffect会用于处理副作用，而前两个hooks不能。
+useMemo(() => <component />) 等价于 useCallback(<component />)
+
 useMemo和useCallback都会在组件第一次渲染的时候执行，之后会在其依赖的变量发生改变时再次执行；并且这两个hooks都返回缓存的值，useMemo返回缓存的变量，useCallback返回缓存的函数。
 useCallback:返回一个 memoized 回调函数，两个参数，回调函数，执行条件
 useMemo:返回一个 memoized 值
 useCallback(fn, deps) 相当于 useMemo(() => fn, deps)
+
+在 Hooks 中可以使用 useMemo 来作为 shouldComponentUpdate 的替代方案, 但 useMemo 只对 props 进行浅比较。
+
+
 
 *useRef
 
@@ -46,6 +56,7 @@ useCallback(fn, deps) 相当于 useMemo(() => fn, deps)
 */
 
 //useContext&memo
+//const {Provider, Consumer} = React.createContext(defaultValue);  Context
 const FormContext = createContext();
 const FormProvider = ({ initialValues, children }) => {
   const [values, setValues] = useState(initialValues);
@@ -109,6 +120,25 @@ const Counter = (props)=> {
     await setCount(count + 1)  
   }
   
+  //首次渲染完成
+  //   componentDidMount() {
+  //     document.title = `You clicked ${this.state.count} times`;
+  //   }
+  //更新渲染完成
+  //   componentDidUpdate() {
+  //     document.title = `You clicked ${this.state.count} times`;
+  //   }
+  //组件卸载阶段 == return function useEffect每次组件变更均执行
+  // componentWillUnmount(){
+
+  // }
+  useEffect(() => {
+    console.log("component update");
+    document.title = `标题-${count} times`;
+    return () => {
+      console.log("unbind");
+    };
+  }, [count]);
 
 //useReducer
 const init=(initialCount) => {
