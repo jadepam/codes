@@ -1,27 +1,21 @@
 # 理论知识
 - 算法与数据结构
-
-<!-- ![](/static/leetcode/datatype.jpg)
-![](/static/leetcode/type.jpg)
-![](/static/leetcode/data&algorithm.jpg) -->
-
 <div style="width:800px">
-    <img src="../static/leetcode/datatype.jpg" style="width:100%">
+    <img src="../../static/leetcode/datatype.jpg" style="width:100%">
     <div>
-        <img src="../static/leetcode/type.jpg" style="width:50%;display:inline-block">
-        <img src="../static/leetcode/data&algorithm.jpg" style="width:50%;display:inline-block">
+        <img src="../../static/leetcode/type.jpg" style="width:50%;display:inline-block">
+        <img src="../../static/leetcode/data&algorithm.jpg" style="width:50%;display:inline-block">
     </div>
 </div>
 
 
-
 - 时间复杂度
 
-![](/static/leetcode/时间复杂度.jpg)
+![](../../static/leetcode/时间复杂度.jpg)
 
      时间复杂度中的log（n）底数到底是多少？
 
-![](/static/leetcode/log.jpg)
+![](../../static/leetcode/log.jpg)
 
     假设有底数为2和3的两个对数函数，如上图。当X取N（数据规模）时，求所对应的时间复杂度得比值，即对数函数对应的y值，用来衡量对数底数对时间复杂度的影响。
 

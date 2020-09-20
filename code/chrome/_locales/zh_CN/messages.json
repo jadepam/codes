@@ -1,0 +1,35 @@
+{
+   "msg":{
+      "message": "请叫我百晓生"
+   },
+   "loginOut": {
+      "message": "退出"
+   },
+   "signUp": {
+      "message": "注册"
+   },
+   "signIn": {
+      "message": "登录"
+   },
+   "history":{
+      "message": "历史记录"
+   },
+   "bookmark": {
+      "message": "书签"
+   },
+   "web": {
+      "message": "百度"
+   },
+   "lang": {
+      "message": "中文"
+   },
+   "auther":{
+      "message": "@作者"
+   },
+   "phone":{
+      "message": "手机号码"
+   },
+   "password":{
+      "message": "密码"
+   }
+}

@@ -1,0 +1,35 @@
+{
+   "msg":{
+      "message": "Please call me Bai Xiaosheng"
+   },
+   "loginOut": {
+      "message": "Logout"
+   },
+   "signUp": {
+      "message": "signUp"
+   },
+   "signIn": {
+      "message": "signIn"
+   },
+   "history":{
+      "message": "History"
+   },
+   "bookmark": {
+      "message": "Bookmark"
+   },
+   "web": {
+      "message": "Google"
+   },
+   "lang": {
+      "message": "English"
+   },
+   "auther":{
+      "message": "@auther"
+   },
+   "phone":{
+      "message": "phone number"
+   },
+   "password":{
+      "message": "password"
+   }
+}

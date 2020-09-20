@@ -9,7 +9,7 @@ import {api} from '../config'
 const Home=({data})=> {
   return <div>
     <p>微信扫码登入</p>
-    <img src={data}/>
+    <img alt="" src={data}/>
     <style jsx>{`
         p {
           color: blue;

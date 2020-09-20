@@ -178,7 +178,7 @@ Flex Box 由伸缩容器和伸缩项目组成。通过设置元素的 display �
 
 - 滤镜filter:hue-rotate(0deg)
 
- 
+
 - - 字体裁剪&背景色透明，[渐变过渡字体](./../code/css/fort.html)
 ```
    @keyframes hue
@@ -209,12 +209,12 @@ Flex Box 由伸缩容器和伸缩项目组成。通过设置元素的 display �
 ```
 
 - - 混合模式background-blend-mode
- 
+
 - - 滤镜(filter颜色+hue-rotate)的双向应用，[支持css动画](./../code/css/filter.html)
-![img](./../code/css/images/car.gif)
+![img](../../code/css/images/car.gif)
 - 分栏：resize + scrollbar
 - -webkit-scrollbar [自定义滚动条](./../code/css/scroll.html)
-![img](./../code/css/images/scroll.png)
+![img](../../code/css/images/scroll.png)
 
 - 滚动的临界点scroll-snap-align
 - 蒙版效果（遮罩） -webkit-mask-image
@@ -294,11 +294,11 @@ on",	function(event)	{
 
 ## 4.[css houdini/js in css ](https://css-houdini.rocks/)
 [兼容性](https://ishoudinireadyyet.com)
-![img](./../code/css/images/houdini.png)
+![img](../../code/css/images/houdini.png)
 
 
 ## 5.css 重绘 重排 
-![img](./../code/css/images/CSS-HOUDINI-2.png)
+![img](../../code/css/images/CSS-HOUDINI-2.png)
 
 
 ## 6.css next
