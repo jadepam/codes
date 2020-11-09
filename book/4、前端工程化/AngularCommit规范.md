@@ -41,7 +41,7 @@ npx commitizen init cz-conventional-changelog --save-dev
 npx git-cz
 ```
 
-![image-20200723145004516](/Users/jadepam/Library/Application Support/typora-user-images/image-20200723145004516.png)
+![image-20200723145004516](/static/gitlab-ci/image-20200723145004516.png)
 
 ```json
 feat: A new feature //新功能
@@ -95,7 +95,7 @@ npm install standard-version --D
 npx standard-version
 ```
 
-![图1](/Users/jadepam/Library/Application Support/typora-user-images/image-20200723144131289.png)
+![图1](/static/gitlab-ci/image-20200723144131289.png)
 
 常用命令： 会同步变更package.json的"version"
 
@@ -198,7 +198,7 @@ module.exports = {
 
 效果预览：
 
-![image-20200723165902062](/Users/jadepam/Library/Application Support/typora-user-images/image-20200723165902062.png)
+![image-20200723165902062](/static/gitlab-ci/image-20200723165902062.png)
 
 
 

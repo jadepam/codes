@@ -1,17 +1,24 @@
-# 单元测试
+### 单元测试与测试覆盖率
 
--   单元测试框架
+- 单元测试框架
 
-```
-  Node.js本身集成 require(“assert”);
+  1、单纯的测试框架：[Mocha](https://mochajs.org/)、Ava
+
+  需要断言库：
+
   should.js(BDD断言库)
   expect.js(BDD断言库)
   chai.js(TDD BDD双模)
-  Jasmine.js(BDD)
-  Intern 更是一个大而全的单元测试框架
-  QUnit 一个游离在jQuery左右的测试框架
-  Macaca 一套完整的自动化测试解决方案 国产神器来自阿里
-```
+
+  better-assert
+
+  assert：nodejs 原生模块
+
+  组合事例：Mocha+Chai
+
+  2、集成框架，开箱即用：
+
+  Jasmine.js(BDD)、Jest
 
 ![img](/static/QA/1.jpg)
 
@@ -35,7 +42,7 @@
     生成
     ```
 
-## 性能测试
+### 性能测试
 
 -   基准测试
 
@@ -72,15 +79,21 @@ Connection Times 连接时间，它包括客户端向服务器端建立连接、
 
 ## 功能测试
 
--   selenium-webdriver
--   protractor
--   selenium-standalone
--   http://webdriver.io/ WEBDRIVERI/O
--   冒烟测试 SmokeTest 自由测试的一种，找到一个 BUG 开发
-    修复，然后专门针对此 BUG,优点节省生煎防止 build 失败，
-    缺点是覆盖率极低。
--   回归测试 修改一处对整体功能全部测试，一般配合自动化
-    测
+- selenium-webdriver
+
+- protractor
+
+- selenium-standalone
+
+- http://webdriver.io/ WEBDRIVERI/O
+
+- 冒烟测试 SmokeTest 
+
+  用途：项目构建后预测试，确保基本功能OK，bulid后确保静态资源存在
+
+- 回归测试 
+
+  用途：修改一处对整体功能全部测试，一般配合自动化测
 
 ## 案例
 [vue多页应用+自动化测试](https://github.com/jadepam/vueMpa)

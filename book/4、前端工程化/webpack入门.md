@@ -236,7 +236,7 @@ css/sass/less 文件中的 @import 语句。
   CommonJS与ES6 Module主要区别在于前者建立模块依赖关系是在运行时，后者是在编译时；在模块导入方面，CommonJS导入的是值拷贝，ES6 Module导入的是只读的变量映射；ES6 Module通过其静态特性可以进行编译过程中的优化，并且具备处理循环依赖的能力.
 
 	- 模块：commonjs 每个模块是拥有各自的作用域的，对外不可见，不会污染全局环境
-导出exports： CommonJS在每个模块的首部默认添加了以下代码：var module = {￼     exports: {},￼ };￼ var exports = module.exports;
+导出exports： CommonJS在每个模块的首部默认添加了以下代码：var module = {￼    exports: {},￼};￼var exports = module.exports;
 导入require：导入只会执行一次，接收表达式
 
 - es6 module
@@ -259,13 +259,13 @@ css/sass/less 文件中的 @import 语句。
 - umd
 
 	- 通用模块标准，
-// calculator.js￼ (function (global, main) {￼ 
-// 根据当前环境采取不同的导出方式￼ 
-if (typeof define === 'function' && define.amd) {￼  
-// AMD￼  define(...);￼  
-} else if (typeof exports === 'object') {￼  
-// CommonJS￼  module.exports = ...;￼  } 
-else {￼  // 非模块化环境￼  global.add = ...;￼  }￼ }(this, function () {￼  // 定义模块主体￼  return {...}￼ }));
+// calculator.js￼(function (global, main) {￼
+// 根据当前环境采取不同的导出方式￼
+if (typeof define === 'function' && define.amd) {￼ 
+// AMD￼ define(...);￼ 
+} else if (typeof exports === 'object') {￼ 
+// CommonJS￼ module.exports = ...;￼ } 
+else {￼ // 非模块化环境￼ global.add = ...;￼ }￼}(this, function () {￼ // 定义模块主体￼ return {...}￼}));
 
 - 非模块化
 
