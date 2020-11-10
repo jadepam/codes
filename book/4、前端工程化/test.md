@@ -41,7 +41,8 @@
     coverageReporter: { type: 'html',dir: 'coverage/' } //配制代码覆盖测试率
     生成
     ```
-
+- 测试覆盖率
+  [istanbul](https://istanbul.js.org/)
 ### 性能测试
 
 -   基准测试

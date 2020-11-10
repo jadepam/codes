@@ -17,7 +17,7 @@
   - [4、js运行时环境](#4js%E8%BF%90%E8%A1%8C%E6%97%B6%E7%8E%AF%E5%A2%83)
     - [浏览器](#%E6%B5%8F%E8%A7%88%E5%99%A8)
     - [deno](#deno)
-    - [构建工具&规范](#%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7%E8%A7%84%E8%8C%83)
+    - [规范](#%E8%A7%84%E8%8C%83)
     - [自动化测试](#%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95)
     - [持续构建/部署](#%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA%E9%83%A8%E7%BD%B2)
   - [6、性能优化](#6%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
@@ -58,7 +58,7 @@
 - [es6+next](book/1、网页三剑客/es6.md)
 - [ts](book/1、网页三剑客/ts.md)
 > 实战
-- [ts](code/js-code/src/ts)
+- [数据拦截](book/1、网页三剑客/proxy.md)
 
 ### css
 > 理论
@@ -86,11 +86,8 @@
 - [react笔记](https://app.yinxiang.com/fx/22b46e5c-675b-48ae-86b5-01b45d357e81)
 
 > 实战
-
 - [react16.8 中 hooks 结合 dav.js 使用方法](code/reacthooks/src/pages/test/hooks.js)
 - [react+TS+UI组件库]()
-
-
 
 ## 4、js运行时环境
 
@@ -117,31 +114,28 @@ node搭建ws实现报表大屏互动
 
 > 实战
 ## 5、前端工程化
-
-### 构建工具&规范
-- [webpack](book/4、前端工程化/webpack入门.md)
-
-- [rollup]
-
+- [前端工程化实践指南](book/4、前端工程化/前端工程化实践指南.md)
+### 构建工具
+> 构建工具
+- [玩转webpack](book/4、前端工程化/玩转webpack.md)
+  [code仓库](code/webpcak)
+  
+- [rollup]适用于js库打包构建
+### 规范  
+- [Angular commit](book/4、前端工程化/AngularCommit规范.md)
+- [语义化版本（Semantic-Versioning）规范格式](book/4、前端工程化/语义化版本规范.md)
 - 代码检查工作流
 [husky](https://github.com/typicode/husky)（避免糟糕的 git commit） 和 [lint-staged](https://github.com/okonet/lint-staged)（执行所需脚本）
 
-- [Angular commit](book/4、前端工程化/AngularCommit规范.md)
 ### 自动化测试
 - [自动化测试概念](book/4、前端工程化/test.md)
-
 - [postman接口自动化测试]
-
-
-### 持续构建/部署
-<!-- git版本管理：
-svn：集中式，本地与服务器，文件可以lock；
-git: 分布式，http、ssh -->
-
-- [Travis CI & github 自动发布 npm 插件](book/4、前端工程化/TravisCI.MD)
+  
+### 持续构建/部署  
 - [gitlab &gitlab-ci 自动化部署](book/4、前端工程化/gitlab-ci.MD)
+- [Travis CI & github 自动发布 npm 插件](book/4、前端工程化/TravisCI.MD)
 - [Settings Sync & github 同步 vscode 配置](book/4、前端工程化/vscode.MD)
-- [前端工程化实践指南](book/4、前端工程化/前端工程化实践指南.md)
+
 
 ## 6、性能优化
 
@@ -172,7 +166,7 @@ git: 分布式，http、ssh -->
 百晓生书签管理
 
 ## 8、todo
-
+doctoc README.md # 更新目录
 <!-- ```
 git remote -v
 git push github master

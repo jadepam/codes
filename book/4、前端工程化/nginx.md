@@ -1,6 +1,6 @@
 
 
-![image-20200901181911718](/Users/jadepam/Library/Application Support/typora-user-images/image-20200901181911718.png)
+![image-20200901181911718](/static/image-20200901181911718.png)
 
 Nginx先天的事件驱动型设计、全异步的网络I/O处理机制、极少的进程间切换以及许多优化设计，都使得Nginx天生善于处理高并发压力下的互联网请求，同时Nginx降低了资源消耗，可以把服务器硬件资源“压榨”到极致。
 

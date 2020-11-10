@@ -1,3 +1,11 @@
+### 基础概念
+
+git版本管理：
+
+svn：集中式，本地与服务器，文件可以lock；
+git: 分布式，http、ssh 
+
+---- 
 1、导致报错:error: You have not concluded your merge (MERGE_HEAD exists).的原因可能是在以前pull下来的代码自动合并失败。
 
 解决方案一：保留本地的更改，中止合并->重新合并->重新拉取
