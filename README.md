@@ -119,6 +119,7 @@ node搭建ws实现报表大屏互动
 > 构建工具
 - [玩转webpack](book/4、前端工程化/玩转webpack.md)
   [code仓库](code/webpcak)
+- [webpack 5.* module-federation的应用（微前端）](book/4、前端工程化/webpackv5.md)
   
 - [rollup]适用于js库打包构建
 ### 规范  
