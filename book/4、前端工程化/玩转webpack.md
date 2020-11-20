@@ -98,7 +98,7 @@ path和publicPath的区别在于path指定的是资源的输出位置，而publi
   
   
 ## loader
-
+loader 只是一个导出为函数的 JavaScript 模块
 ### 概述
 - 1、webpack 开箱即用只支持 JS 和 JSON 两种文件类型，通过 Loaders 去支持其它文
 件类型并且把它们转化成有效的模块，并且可以添加到依赖图中
@@ -798,8 +798,28 @@ webpack 默认支持，在 .babelrc 里设置 modules: false 即可 · productio
 ## React 全家桶 和 webpack 开发商城项目
 ----
 # webpack原理
-## 动手实现一个简易的 webpack
-## 编写 Loader 和插件
+## [动手实现一个简易的 webpack](/code/webpack/simple-webpack/)
+## [编写 Loader 和插件](/code/webpack/loader-order/)
+本地开发调试工具：loader-runner
+
+## [plugin](/code/webpack/zip-plugin/)
+插件没有像 loader 那样的独立运行环境，只能在 webpack 里面运行.
+
+> 插件的基本结构 
+
+```
+class MyPlugin { #插件名称
+	apply(compiler) {#插件上的 apply 方法
+   compiler.hooks.done.tap(' My Plugi·n', (  //插件的 hooks
+  	stats/*statsispassedasargumen··twhendonehookistapped. */
+ ) => {
+	console.log('Hello World!'); // 插件处理逻辑
+} } }); 
+ module.exports = MyPlugin;
+//插件使用:
+plugins: [ new MyPlugin() ]
+
+```
 ----
 # 基本概念
 ## 1、webpack 中，module，chunk 和 bundle 的区别是什么？

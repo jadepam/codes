@@ -517,7 +517,7 @@ Number()、parseInt()、parseFloat()
 - .isSafeInteger() 判断数字是不是安全整数
 - .MAX_SAFE_INTEGER 最大安全整数
 - .MIN_SAFE_INTEGER  最小安全整数
-- 安全整数：-（2**53-1）~(2**53-1)
+- 安全整数：-（2^53-1）~(2^53-1)
 
 
 > Math：
@@ -533,7 +533,10 @@ Number()、parseInt()、parseFloat()
 - Math.floor(x)　　返回小于等于x的最大整数　Math.floor(-5.99)　　-6
 - Math.random()　生成0和1之间的随机小数
 - Math.floor(Math.random() * 7 + 1)生成0和8之间的随机整数,注意是整数，不是小数
-
+- Number.EPSILON 可以用来设置“能够接受的误差范围”
+  Number.EPSILON === Math.pow(2, -52)
+  0.1+0.3===0.3//false
+  Math.abs(0.1+0.2-0.3)<=Number.EPSILON//true
 
 
 # 14、ES2017\ES2018（ES9）新增
@@ -587,6 +590,9 @@ done:true/false 为true跳出循环
 [Symbol.iterator]属性运行Array.prototype[Symbol.iterator]测试；
 属性值是函数，执行函数返回一个迭代器；这个迭代器就有next方法可执行顺序迭代子元素；
 更多[参考](https://es6.ruanyifeng.com/#docs/)
+
+
+
 
 
 
