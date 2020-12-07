@@ -51,10 +51,12 @@ git branch | grep -v 'master' | xargs git branch -D
 - git reset 撤销至某个提交（恢复至当前版本代码）
 ```
 git reflog
-git reset --hard [last good SHA]
+git reset --hard [last good SHA]（历史记录不会保留）
+git push origin branch -f
 ```
 - git revert 撤销某个提交
-
+git revert HEAD
+git push origin master
 
 5、放错分支（备份到新的分支）
 - 新建一个 feature 分支，指向当前最新的提交，注意，这时依然停留在当前分支
@@ -101,13 +103,6 @@ git log 命令可以显示所有提交过的版本信息（--pretty=oneline只�
 git config --system --unset credential.helper
 重新输入账户与密码
 
-
-有如下几种处理方式：
-1. git add并且git commit，再git checkout，提交到当前分支
-2. git add但不git commit，可以git stash，然后git checkout到新分支，做修改，然后git checkout回到之前的分支之后git stash apply，再git commit，提交到之前的分支
-3. git add但不git commit，也不git stash，直接git checkout到新分支，做修改，然后再git commit的话，记录就在切换后的分支下面。
-
-其背后的原因：一个本地的git repo只有一个工作区和暂存区，但是有多个分支的提交区，而我们的checkout只是将HEAD指针从一个分支切换到另一个分支
 
 9、git config
 
@@ -189,6 +184,15 @@ git push origin --tags
 git tag -d <tagName>
 git push origin :<tagName>
 
-4.检出标签
+检出标签
 git checkout -b <branchName> <tagName>
 
+13、暂存区
+1. git add=>git commit=>git checkout，提交到当前分支
+2. git add=>git stash=>git checkout
+git stash list
+git stash apply stash@{id}//选择恢复id
+git stash pop//恢复到最新
+3. git add但不git commit，也不git stash，直接git checkout到新分支，做修改，然后再git commit的话，记录就在切换后的分支下面。
+
+其背后的原因：一个本地的git repo只有一个工作区和暂存区，但是有多个分支的提交区，而我们的checkout只是将HEAD指针从一个分支切换到另一个分支

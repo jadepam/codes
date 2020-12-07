@@ -80,6 +80,46 @@ gitlab对应页面:
 
 <img src="/static/gitlab-ci/image-20201105184541332.png" alt="image-20201105184541332" style="zoom: 33%;text-algin:left" />
 
+自动注册脚本：
+expect shell.sh token name
+```
+#!/usr/bin/tclsh
+package require Expect
+# set host_ip1 [lindex $argv 0]
+# set host_usr [lindex $argv 1]
+# set host_pwd [lindex $argv 2]
+# 服务器
+set host_ip1 ip
+set host_usr name
+set host_pwd pwd
+#runner配置
+set token [lindex $argv 0]
+#67VGC6mPZotT_wjvTSmo
+set name  [lindex $argv 1]
+#gitlab-runner
+set curl  http://hcgit.hengchang6.com/
+set tag auto-register
+set language shell
+set id bc331347f611
+spawn ssh $host_usr@$host_ip1
+set timeout 2
+expect {
+  -re "password" {send "$host_pwd\n"} 
+  -re "yes/no" {send "yes\n";exp_continue} # 有的时候输入几次密码来确认,exp_continue
+}
+expect "$/#"
+send "docker exec -it ${id} gitlab-runner register \r"
+expect "https" {send "${curl} \r"}
+expect "token" {send "${token} \r"}
+expect "description" {send "${name} \r"}
+expect "tags" {send "${tag} \r"}
+expect "Please" {send "${language} \r"}
+expect "#"
+send "gitlab-runner list \r"
+send "exit\r"
+expect eof
+```
+
 3、配置.gitlab-ci.yml配置 [官网](https://docs.gitlab.com/ee/ci/yaml/README.html)
 
 简单dom
