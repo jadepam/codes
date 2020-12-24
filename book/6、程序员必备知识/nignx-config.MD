@@ -21,5 +21,3 @@
     include ../conf.d/test_cn.conf;
     include ../conf.d/static_test_cn.conf;
     ```
-
-* [nignx更多配置详解](https://blog.csdn.net/pamki/article/details/95335573)

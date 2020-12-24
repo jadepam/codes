@@ -137,15 +137,15 @@ angular|内容|内容|内容|内容 -->
 ### 编程
 - [leetcode](book/6、程序员必备知识/leetcode.MD)
 - [常用算法](book/6、程序员必备知识/algorithm.MD)
-- [设计模式](book/6、网页三剑客/Design_pattern.md)-[code](code/js-code/src/Design_pattern/)
+- [设计模式](book/6、网页三剑客/Design_pattern.md)
+  [code](code/js-code/src/Design_pattern/)
 
 ### 网络
 - http协议
-
 ### 服务端
-- [linux](book/6、程序员必备知识/linux.MD)
+- [linux](book/6、程序员必备知识/linux.md)
 - [docker]()
-- [nginx](book/6、程序员必备知识/nginx.MD)
+- [nginx](book/6、程序员必备知识/nginx.md)
 ### 工具类
 - [git 常用命令](book/6、程序员必备知识/git.md)
 ## 7、项目实战
