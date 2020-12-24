@@ -1,0 +1,313 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:README</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<ul>
+<li><a href="#%E5%89%8D%E7%AB%AF%E5%85%A8%E6%A0%88%E5%AD%A6%E4%B9%A0%E7%9B%AE%E5%BD%95">前端全栈学习目录</a><ul>
+<li><a href="#1%E7%BD%91%E9%A1%B5%E4%B8%89%E5%89%91%E5%AE%A2htmljscss">1、网页三剑客(html/js/css)</a><ul>
+<li><a href="#html">html</a></li>
+<li><a href="#js">js</a></li>
+<li><a href="#css">css</a></li>
+</ul>
+</li>
+<li><a href="#2js%E8%BF%90%E8%A1%8C%E6%97%B6%E7%8E%AF%E5%A2%83">2、js运行时环境</a><ul>
+<li><a href="#%E6%B5%8F%E8%A7%88%E5%99%A8">浏览器</a></li>
+<li><a href="#node">node</a></li>
+<li><a href="#deno">deno</a></li>
+</ul>
+</li>
+<li><a href="#4%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96">4、前端工程化</a><ul>
+<li><a href="#%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7">构建工具</a></li>
+<li><a href="#%E8%A7%84%E8%8C%83">规范</a></li>
+<li><a href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95">自动化测试</a></li>
+<li><a href="#%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA%E9%83%A8%E7%BD%B2">持续构建/部署</a></li>
+</ul>
+</li>
+<li><a href="#5%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96">5、性能优化</a><ul>
+<li><a href="#%E5%89%8D%E7%AB%AF%E7%9B%91%E6%8E%A7">前端监控</a></li>
+</ul>
+</li>
+<li><a href="#6%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E5%A4%87%E7%9F%A5%E8%AF%86">6、程序员必备知识</a><ul>
+<li><a href="#%E7%BC%96%E7%A8%8B">编程</a></li>
+<li><a href="#%E7%BD%91%E7%BB%9C">网络</a></li>
+<li><a href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF">服务端</a></li>
+<li><a href="#%E5%B7%A5%E5%85%B7%E7%B1%BB">工具类</a></li>
+</ul>
+</li>
+<li><a href="#7%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98">7、项目实战</a><ul>
+<li><a href="#%E5%85%A8%E6%A0%88%E7%B3%BB%E5%88%97">全栈系列</a></li>
+<li><a href="#%E5%BE%AE%E4%BF%A1%E7%9B%B8%E5%85%B3">微信相关</a></li>
+<li><a href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF-1">服务端</a></li>
+<li><a href="#%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%B0%8F%E9%A1%B9%E7%9B%AE">好玩的小项目</a></li>
+</ul>
+</li>
+<li><a href="#8%E4%B9%A6%E5%8D%95%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0">8、书单&amp;读书笔记</a><ul>
+<li><a href="#http%E7%9B%B8%E5%85%B3">http相关</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<h1 id="-">前端全栈学习目录</h1>
+<h2 id="1-html-js-css-">1、网页三剑客(html/js/css)</h2>
+<h3 id="html"><a href="/book/1、网页三剑客/html.md">html</a></h3>
+<h3 id="js">js</h3>
+<blockquote>
+<p>理论</p>
+<ul>
+<li><a href="book/1、网页三剑客/es6.md">es6+next</a></li>
+<li><a href="book/1、网页三剑客/ts.md">ts</a></li>
+<li><a href="book/1、网页三剑客/js.MD">原生js、ES+、函数式编程</a>
+实战</li>
+<li><a href="book/1、网页三剑客/proxy.md">数据拦截</a></li>
+</ul>
+</blockquote>
+<h3 id="css">css</h3>
+<blockquote>
+<p>理论</p>
+<ul>
+<li><a href="book/1、网页三剑客/CSS.md">CSS知识点</a></li>
+</ul>
+</blockquote>
+<p>  <img src="code/css/images/Pikachu.gif" width="15%"></p>
+<ul>
+<li><a href="code/css">code example</a></li>
+</ul>
+<h2 id="2-js-">2、js运行时环境</h2>
+<h3 id="-"><a href="book/3、js运行时环境/浏览器.md">浏览器</a></h3>
+<h3 id="node">node</h3>
+<blockquote>
+<p>理论</p>
+</blockquote>
+<blockquote>
+<p>实战</p>
+<ul>
+<li><a href="code/wechat-cli.MD">node+koa2 +ssr(Nextjs)搭建小程序服务端+管理后台</a></li>
+<li><a href="https://github.com/jadepam/node-crawer">node-crawler 初体验</a></li>
+</ul>
+</blockquote>
+<ul>
+<li>node搭建ws实现报表大屏互动</li>
+</ul>
+<h3 id="deno">deno</h3>
+<blockquote>
+<p>理论</p>
+</blockquote>
+<blockquote>
+<p>实战</p>
+</blockquote>
+<h3 id="-">桌端应用</h3>
+<blockquote>
+<p>理论</p>
+</blockquote>
+<blockquote>
+<p>实战</p>
+</blockquote>
+<h2 id="3-js-">3、js视图类框架</h2>
+<h3 id="jq">jq</h3>
+<blockquote>
+<p>理论</p>
+</blockquote>
+<blockquote>
+<p>实战</p>
+</blockquote>
+<h3 id="vue">vue</h3>
+<blockquote>
+<p><a href="https://react.docschina.org/docs/hello-world.html">理论</a></p>
+</blockquote>
+<blockquote>
+<p>实战</p>
+</blockquote>
+<h3 id="react">react</h3>
+<blockquote>
+<p>理论</p>
+<ul>
+<li><a href="https://app.yinxiang.com/fx/59485fa5-2fca-43b3-9061-24b779e9b7ee">vuex&amp;redux</a></li>
+<li><a href="https://app.yinxiang.com/fx/22b46e5c-675b-48ae-86b5-01b45d357e81">react笔记</a></li>
+</ul>
+</blockquote>
+<blockquote>
+<p>实战</p>
+<ul>
+<li><a href="code/reacthooks/src/pages/test/hooks.js">react16.8 中 hooks 结合 dav.js 使用方法</a></li>
+<li><a href="">react+TS+UI组件库</a></li>
+</ul>
+</blockquote>
+<h2 id="4-">4、前端工程化</h2>
+<h3 id="-">构建工具</h3>
+<blockquote>
+<p>构建工具</p>
+<ul>
+<li><a href="book/4、前端工程化/玩转webpack.md">玩转webpack</a>
+<a href="code/webpcak">code仓库</a></li>
+<li><a href="book/4、前端工程化/webpackv5.md">webpack 5.* module-federation的应用（微前端）</a></li>
+</ul>
+</blockquote>
+<ul>
+<li>[rollup]适用于js库打包构建<h3 id="-">规范</h3>
+</li>
+<li><a href="book/4、前端工程化/AngularCommit规范.md">Angular commit</a></li>
+<li><a href="book/4、前端工程化/语义化版本规范.md">语义化版本（Semantic-Versioning）规范格式</a></li>
+<li>代码检查工作流
+<a href="https://github.com/typicode/husky">husky</a>（避免糟糕的 git commit） 和 <a href="https://github.com/okonet/lint-staged">lint-staged</a>（执行所需脚本）</li>
+</ul>
+<h3 id="-">自动化测试</h3>
+<ul>
+<li><a href="book/4、前端工程化/test.md">自动化测试概念</a></li>
+<li>[postman接口自动化测试]</li>
+</ul>
+<h3 id="-">持续构建/部署</h3>
+<ul>
+<li><a href="book/4、前端工程化/gitlab-ci.MD">gitlab &amp;gitlab-ci 自动化部署</a></li>
+<li><a href="book/4、前端工程化/TravisCI.MD">Travis CI &amp; github 自动发布 npm 插件</a></li>
+<li><a href="book/4、前端工程化/vscode.MD">Settings Sync &amp; github 同步 vscode 配置</a></li>
+<li><a href="book/4、前端工程化/前端工程化实践指南.md">前端工程化实践指南</a></li>
+</ul>
+<h2 id="5-">5、性能优化</h2>
+<h3 id="-">前端监控</h3>
+<ul>
+<li><a href="https://github.com/rrweb-io/rrweb">rrweb</a>录屏重放</li>
+</ul>
+<h2 id="6-">6、程序员必备知识</h2>
+<h3 id="-">编程</h3>
+<ul>
+<li><a href="book/6、程序员必备知识/leetcode.MD">leetcode</a></li>
+<li><a href="book/6、程序员必备知识/algorithm.MD">常用算法</a></li>
+<li><a href="book/6、网页三剑客/Design_pattern.md">设计模式</a>
+<a href="code/js-code/src/Design_pattern/">code</a></li>
+</ul>
+<h3 id="-">网络</h3>
+<ul>
+<li>http协议<h3 id="-">服务端</h3>
+</li>
+<li><a href="book/6、程序员必备知识/linux.md">linux</a></li>
+<li><a href="">docker</a></li>
+<li><a href="book/6、程序员必备知识/nginx.md">nginx</a><h3 id="-">工具类</h3>
+</li>
+<li><a href="book/6、程序员必备知识/git.md">git 常用命令</a><h2 id="7-">7、项目实战</h2>
+<h3 id="-">全栈系列</h3>
+</li>
+<li><a href="book/7、项目实战/micro-frontends.md">微前端IFrame\WebComponent\Single-SPA</a><h3 id="-">微信相关</h3>
+</li>
+<li><a href="book/7、项目实战/wechat-project-info.MD">微信小程序全栈开发</a></li>
+<li>[微信公众号JDK]</li>
+</ul>
+<h3 id="-">服务端</h3>
+<ul>
+<li><a href="book/7、项目实战/nignx-config.MD">nignx 服务器配置</a></li>
+<li>[graphql]</li>
+</ul>
+<h3 id="-">好玩的小项目</h3>
+<ul>
+<li><p>1、即刻换颜小程序 （头像 DIY）
+<img src="./static/wxapp.png" width="20%" ></p>
+</li>
+<li><p>2、<a href="https://metarhia.github.io/jstp/api/server/">JSTP</a> 实现简单聊天室<a href="code/node-server/README.md">DOM</a></p>
+</li>
+<li><p>3、<a href="code/chrome">chrome插件</a>
+百晓生书签管理</p>
+</li>
+</ul>
+<h2 id="8-">8、书单&amp;读书笔记</h2>
+<h3 id="http-">http相关</h3>
+<ul>
+<li>HTTP权威指南</li>
+<li>深入浅出 HTTPS：从原理到实战</li>
+<li>HTTP/2 in Action 中文版</li>
+</ul>
+<!-- ```
+doctoc README.md # 更新目录
+git remote -v
+git push github master
+git push gitee master
+
+``` -->
+<p><code>`</code></p>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
