@@ -5,7 +5,7 @@ gulp.task('default', () => {
   return gulp.src('./dist/**/*')
     .pipe(sftp({
       host: '',
-      port: "",
+      port: 22,
       user: '',
       pass: '',
       remotePath: '',
