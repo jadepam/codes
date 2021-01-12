@@ -93,6 +93,9 @@ git rebase -i hash(父)
 ```
 git rebase -i hash(父)
 ```
+(5)与分支对比
+git rebase -i origin/banch
+
 7、git relog 与 git log 区别
 git reflog 可以查看所有分支的所有操作记录（包括已经被删除的 commit 记录和 reset 的操作）
 
