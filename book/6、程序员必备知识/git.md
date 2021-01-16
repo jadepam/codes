@@ -177,6 +177,7 @@ git remote set-branches [--add] <name> <branch>..
 gitlab CI/CO
 
 12、tags
+⚠️:请理解tag->commit的对应关系
 git tag <tagName> //创建本地tag
 
 git push origin <tagName> //推送到远程仓库
