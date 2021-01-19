@@ -49,6 +49,8 @@ git remote prune origin
 git branch | grep -v 'master' | xargs git branch -D
 4、撤销提交
 - git reset 撤销至某个提交（恢复至当前版本代码）
+适用场景：feature 分支合并只保留一条commit
+
 ```
 git reflog
 git reset --hard [last good SHA]（历史记录不会保留）
@@ -190,6 +192,10 @@ git push origin :<tagName>
 
 检出标签
 git checkout -b <branchName> <tagName>
+
+同步远端tag：
+ git tag -l | xargs git tag -d//删除本地tag
+ git pull//拉去远端他给
 
 13、暂存区
 1. git add=>git commit=>git checkout，提交到当前分支
