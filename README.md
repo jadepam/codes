@@ -148,7 +148,7 @@
 - [微前端IFrame\WebComponent\Single-SPA](book/7、项目实战/micro-frontends.md)
 ### 微信相关
 - [微信小程序全栈开发](book/7、项目实战/wechat-project-info.MD)
-- [微信公众号JDK]
+- [微信公众号]  (book/7、项目实战/wechat.md)
 
 ### 服务端
 - [nignx 服务器配置](book/7、项目实战/nignx-config.MD)
