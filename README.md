@@ -11,6 +11,7 @@
     - [浏览器](#%E6%B5%8F%E8%A7%88%E5%99%A8)
     - [node](#node)
     - [deno](#deno)
+    - [jq](#jq)
   - [4、前端工程化](#4%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96)
     - [构建工具](#%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7)
     - [规范](#%E8%A7%84%E8%8C%83)
@@ -28,14 +29,10 @@
     - [微信相关](#%E5%BE%AE%E4%BF%A1%E7%9B%B8%E5%85%B3)
     - [服务端](#%E6%9C%8D%E5%8A%A1%E7%AB%AF-1)
     - [好玩的小项目](#%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%B0%8F%E9%A1%B9%E7%9B%AE)
-  - [8、书单&读书笔记](#8%E4%B9%A6%E5%8D%95%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0)
-    - [http相关](#http%E7%9B%B8%E5%85%B3)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # 前端全栈学习目录
-
-
 ## 1、网页三剑客(html/js/css)
 
 ### [html](/book/1、网页三剑客/html.md)
@@ -44,6 +41,7 @@
 > 理论
 - [es6+next](book/1、网页三剑客/es6.md)
 - [ts](book/1、网页三剑客/ts.md)
+- [js核心原理解析](book/1、网页三剑客/jscore.md)
 - [原生js、ES+、函数式编程](book/1、网页三剑客/js.MD)
 > 实战
 - [数据拦截](book/1、网页三剑客/proxy.md)
@@ -59,7 +57,7 @@
 ## 2、js运行时环境
 
 ### [浏览器](book/3、js运行时环境/浏览器.md)
-
+[v8](book/3、js运行时环境/v8.md)
 ### node
 
 > 理论
@@ -72,6 +70,8 @@
 
 ### deno
 > 理论
+
+一个基于v8引擎的安全的TypeScript运行时
 
 > 实战
 ### 桌端应用
@@ -151,8 +151,11 @@
 - [微信公众号]  (book/7、项目实战/wechat.md)
 
 ### 服务端
+- 大前端bff(Backend for Frontends)
+  - node+koa or eggjs
+  - [Apollo+graphql](https://www.howtographql.com/basics/0-introduction/)
 - [nignx 服务器配置](book/7、项目实战/nignx-config.MD)
-- [graphql]
+
 
 ### 好玩的小项目
 - 1、即刻换颜小程序 （头像 DIY）
@@ -163,11 +166,11 @@
 - 3、[chrome插件](code/chrome)
   百晓生书签管理
 
-## 8、书单&读书笔记
+<!-- ## 8、书单&读书笔记
 ### http相关
   - HTTP权威指南
   - 深入浅出 HTTPS：从原理到实战
-  - HTTP/2 in Action 中文版
+  - HTTP/2 in Action 中文版 -->
 
 
 <!-- ```

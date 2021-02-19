@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    111
+    <script>
+        var name="name1"
+var type="global"
+function foo(){
+    var name="foo"
+    console.log(name)
+    console.log(type)
+}
+function bar(){
+    var name="bar"
+    var type ="function"
+    foo()
+}
+bar()//foo、global
+    </script>
+</body>
+</html>
