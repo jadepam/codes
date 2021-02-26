@@ -360,7 +360,7 @@ g1.next().value.then(res=>{})
 
 generator:自动化generator函数调用器
 ```
-//fn为generator函数
+//fn为generator函数,co框架
 
 const co=(callback)=>{
     let cb=callback()
@@ -368,15 +368,12 @@ const co=(callback)=>{
     cb.next()
     function next(d){
         let result=cb.next(d)//value,done
-        if(result.do){
-            return
-        }
+        if(result.done) return
         result.value.then(data=>{
             next(data)
         })
         next()
     }
-    
 }
 co(fn)
 ```
@@ -572,7 +569,6 @@ handler：一个对象，其属性是当执行一个操作时定义代理的行�
 ```
 
 # 16、迭代器
-
 for in：key，可枚举属性
 
 for of：value，of一个可迭代对象，该对象实现了迭代器，迭代器有symbol.iterator方法，该方法返回一个next对象
@@ -590,15 +586,6 @@ done:true/false 为true跳出循环
 [Symbol.iterator]属性运行Array.prototype[Symbol.iterator]测试；
 属性值是函数，执行函数返回一个迭代器；这个迭代器就有next方法可执行顺序迭代子元素；
 更多[参考](https://es6.ruanyifeng.com/#docs/)
-
-
-
-
-
-
-
-
-
 
 
 

@@ -56,8 +56,9 @@
 
 ## 2、js运行时环境
 
-### [浏览器](book/3、js运行时环境/浏览器.md)
+### 浏览器
 [v8](book/3、js运行时环境/v8.md)
+[浏览器工作原理与实践](book/3、js运行时环境/浏览器工作原理与实践.md)
 ### node
 
 > 理论
@@ -103,8 +104,9 @@
 > 构建工具
 - [玩转webpack](book/4、前端工程化/玩转webpack.md)
   [code仓库](code/webpcak)
+  [webpack思维导图](book/6、程序员必备知识/webpack.xmind)
 - [webpack 5.* module-federation的应用（微前端）](book/4、前端工程化/webpackv5.md)
-  
+
 - [rollup]适用于js库打包构建
 ### 规范  
 - [Angular commit](book/4、前端工程化/AngularCommit规范.md)
@@ -137,6 +139,7 @@
 
 ### 网络
 - http协议
+- [WebSocket](book/6、网页三剑客/WebSocket.md)
 ### 服务端
 - [linux](book/6、程序员必备知识/linux.md)
 - [docker]()
@@ -148,7 +151,7 @@
 - [微前端IFrame\WebComponent\Single-SPA](book/7、项目实战/micro-frontends.md)
 ### 微信相关
 - [微信小程序全栈开发](book/7、项目实战/wechat-project-info.MD)
-- [微信公众号]  (book/7、项目实战/wechat.md)
+- [微信公众号](book/7、项目实战/wechat.md)
 
 ### 服务端
 - 大前端bff(Backend for Frontends)
@@ -161,7 +164,9 @@
 - 1、即刻换颜小程序 （头像 DIY）
   <img src="./static/wxapp.png" width="20%" >
 
+
 - 2、[JSTP](https://metarhia.github.io/jstp/api/server/) 实现简单聊天室[DOM](code/node-server/README.md)
+
 
 - 3、[chrome插件](code/chrome)
   百晓生书签管理
@@ -172,7 +177,6 @@
   - 深入浅出 HTTPS：从原理到实战
   - HTTP/2 in Action 中文版 -->
 
-
 <!-- ```
 doctoc README.md # 更新目录
 git remote -v
@@ -181,4 +185,3 @@ git push gitee master
 
 ``` -->
 
-```
