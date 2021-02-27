@@ -40,9 +40,9 @@
 ### js
 > 理论
 - [es6+next](book/1、网页三剑客/es6.md)
-- [ts](book/1、网页三剑客/ts.md)
-- [js核心原理解析](book/1、网页三剑客/jscore.md)
-- [原生js、ES+、函数式编程](book/1、网页三剑客/js.MD)
+- [ts](book/1、网页三剑客/ts入门.md)
+<!-- - [js核心原理解析](book/1、网页三剑客/jscore.md) -->
+- [原生js、ES+、函数式编程](book/1、网页三剑客/js.md)
 > 实战
 - [数据拦截](book/1、网页三剑客/proxy.md)
 

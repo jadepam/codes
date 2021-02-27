@@ -56,6 +56,7 @@ Number、String、Boolean三个类型比较特殊，当和new搭配时，表示�
     enumerable: true, //决定for in能否枚举该属性
     configurable: true//决定该属性能否被删除或者改变特征值
 <hr>
+
 ## js原生知识点
 
 -   1.函数提升变量提升函数提升优先于变量提升
