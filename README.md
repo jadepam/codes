@@ -39,6 +39,7 @@
 
 ### js
 > 理论
+- [JavaScript 指南](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide)
 - [es6+next](book/1、网页三剑客/es6.md)
 - [ts](book/1、网页三剑客/ts入门.md)
 <!-- - [js核心原理解析](book/1、网页三剑客/jscore.md) -->
@@ -86,11 +87,11 @@
 
 > 实战
 ### vue
-> [理论](https://react.docschina.org/docs/hello-world.html)
+> 理论
 
 > 实战
 ### react
-> 理论
+> [理论](https://react.docschina.org/docs/hello-world.html)
 - [vuex&redux](https://app.yinxiang.com/fx/59485fa5-2fca-43b3-9061-24b779e9b7ee)
 - [react笔记](https://app.yinxiang.com/fx/22b46e5c-675b-48ae-86b5-01b45d357e81)
 

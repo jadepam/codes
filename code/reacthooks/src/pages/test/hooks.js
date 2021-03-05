@@ -44,6 +44,14 @@ useCallback(fn, deps) 相当于 useMemo(() => fn, deps)
 在 Hooks 中可以使用 useMemo 来作为 shouldComponentUpdate 的替代方案, 但 useMemo 只对 props 进行浅比较。
 
 
+useMemo：父组件将一个值传递给子组件，若父组件的其他值发生变化时，子组件也会跟着渲染多次，会造成性能浪费； useMemo是将父组件传递给子组件的值缓存起来，只有当 useMemo中的第二个参数状态变化时，子组件才重新渲染；
+usecallback：父组件将一个方法传递给子组件，若父组件的其他状态发生变化时，子组件也会跟着渲染多次，会造成性能浪费； usecallback是将父组件传给子组件的方法给缓存下来，只有当 usecallback中的第二个参数状态变化时，子组件才重新渲染；
+useEffect：useEffect有两个参数，第一个参数是回调函数，第二个参数是一个数组，这个数组接受当前函数中的state，若第二个参数状态变化时，则执行回调函数；useEffect只对当前函数中的状态更新有效；
+
+
+
+
+
 
 *useRef
 
