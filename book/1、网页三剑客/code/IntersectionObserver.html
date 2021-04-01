@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <title>IntersectionObserver</title>
+        <style>
+            html,
+            body {
+                height: auto;
+                margin: 0;
+            }
+
+            .body {
+                display: flex;
+                align-items: flex-start
+            }
+
+            #div1,
+            #div2 {
+                height: auto;
+                width: 200px;
+                margin-left: 3.5%;
+                background-color: skyblue;
+            }
+
+            #div3 {
+                position: relative;
+                top: 50px;
+                height: 5px;
+                width: 100%;
+            }
+
+            span {
+                display: inline-block;
+                background-color: red;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="body">
+            <div id="div1">
+                <span style="height: 356px;"></span>
+                <span style="height: 356px;"></span>
+                <span style="height: 356px;"></span>
+            </div>
+            <div id="div2">
+                <span style="height: 356px;"></span>
+                <span style="height: 356px;"></span>
+            </div>
+        </div>
+        <div id="div3">
+        </div>
+        <script>
+            let id1 = document.getElementById('div1');
+            console.dir(id1);
+            let id2 = document.getElementById('div2');
+            let id3 = document.getElementById('div3');
+            let intersectionObserver = new IntersectionObserver((list) => {
+                if (list[0].target.id === "div3" && list[0].isIntersecting) {
+                    console.log('list[0].isIntersecting: ', list[0].isIntersecting);
+                    console.log('list: ', list);
+                    let height = Math.floor(Math.random() * 50 + 400)
+                    let dom = document.createElement('span');
+                    dom.style.height = `${height}px`;
+                    let height1 = id1.clientHeight;
+                    let height2 = id2.clientHeight;
+                    if (height1 <= height2) {
+                        id1.appendChild(dom);
+                    } else {
+                        id2.appendChild(dom);
+                    }
+                }
+            })
+            intersectionObserver.observe(id3);
+            time = setInterval(function (x) {}, 2000)
+
+        </script>
+
+    </body>
+
+</html>

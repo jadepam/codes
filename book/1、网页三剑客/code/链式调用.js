@@ -32,3 +32,11 @@ person.set(10).get(); // '我还是个少年'
 //         }
 //     }
 // }
+
+let arr =Array.from({length:20},(item,index)=>index)
+arr.forEach((item)=>{
+    setTimeout(
+        function(){
+            console.log(item,new Date())
+        },Math.random()*100)
+})

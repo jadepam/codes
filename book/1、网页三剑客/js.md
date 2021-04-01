@@ -111,8 +111,57 @@ Number、String、Boolean三个类型比较特殊，当和new搭配时，表示�
 1、[settimeout的第三个参数](https://developer.mozilla.org/zh-CN/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout)
 作用：作为第一个func()的参数传进去
 有兼容性：IE9 及更早的 IE 浏览器不支持
-
+setTimeout((s) => {
+           console.log(s,"s")
+        }, 1000,"hh")
+//hh s
 2、addeventlistener的第三个参数：addEventListener("click",function(){},true);//false：冒泡；true：捕获
 
 3、csp：网页安全政策Content Security Policy[#浏览器同源策略&&常见攻击](../3、js运行时环境/浏览器工作原理与实践.md),作用：由服务端来决定可以加载哪些第三⽅资源
 
+# 一些新知识
+- fetch
+const response = await fetch(url, {
+  method: 'POST',
+  headers: {
+    "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+  },
+  body: 'foo=bar&lorem=ipsum',
+});
+
+const json = await response.json();
+
+# 常见知识
+- 防抖
+  - 定义：当事件被触发时，设定一个周期**延迟执行**动作，若期间又被触发，则**重新设定**周期，直到周期结束，执行动作；当事件快速连续不断触发时，动作只会执行一次
+```
+function debounce(fn,delay){
+    let time=null
+    return ()=>{
+        if(time){
+            clearInterval(time)
+        }
+        time = setTimeout(fn,delay)
+    }
+}
+```
+- 节流
+  - 定义：节流的策略是，固定周期内，只执行一次动作，若有新事件触发，不执行。周期结束后，又有事件触发，开始新的周期。
+  ```
+    function throttle(fn,delay) {
+      let canRun = true; // 通过闭包保存一个标记
+      return function () {
+          if (!canRun) return; // 在函数开头判断标记是否为true，不为true则return
+          canRun = false; // 立即设置为false
+          setTimeout(() => { // 将外部传入的函数的执行放在setTimeout中
+              fn.apply(this, arguments);
+              // 最后在setTimeout执行完毕后再把标记设置为true(关键)表示可以执行下一次循环了。当定时器没有执行的时候标记永远是false，在开头被return掉
+              canRun = true;
+          }, delay);
+      };
+  }
+  ```
+
+- promise源码
+
+<img src="./static/promise.png" width="50%">
