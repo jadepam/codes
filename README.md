@@ -98,21 +98,17 @@
 
 ## 3、js(视图类)框架
 ### jq
-> 理论
 
-> 实战
 
 ### vue
 
-> 理论
-
-> 实战
+[vue源码](book/2、js视图类框架/vue3.0和react源码.md)
 
 ### react
 
 > [理论](https://react.docschina.org/docs/hello-world.html)
-- [vuex&redux](https://app.yinxiang.com/fx/59485fa5-2fca-43b3-9061-24b779e9b7ee)
-- [react笔记](https://app.yinxiang.com/fx/22b46e5c-675b-48ae-86b5-01b45d357e81)
+
+- [react源码](book/2、js视图类框架/vue3.0和react源码.md)
 
 > 实战
 - [react16.8 中 hooks 结合 dav.js 使用方法](code/reacthooks/src/pages/test/hooks.js)
@@ -121,12 +117,14 @@
 ### 小程序
 
 [小程序底层源码解析](book/2、js视图类框架/小程序底层源码解析.md)
+
+框架：[vuemini](https://vue-mini.gitee.io/guide/installation.html)
 ## 4、前端工程化
 ### 构建工具
 > 构建工具
 - [玩转webpack](book/4、前端工程化/玩转webpack.md)
   [code仓库](code/webpcak)
-  [webpack思维导图](book/6、程序员必备知识/webpack.xmind)
+  [webpack思维导图](book/4、前端工程化/webpack.xmind)
 - [webpack 5.* module-federation的应用（微前端）](book/4、前端工程化/webpackv5.md)
 - [rollup]适用于js库打包构建
 ### 规范  
@@ -146,10 +144,11 @@
 - [前端工程化实践指南](book/4、前端工程化/前端工程化实践指南.md)
 
 ## 5、性能优化
+
 ### [全链路性能优化](book/5、性能优化/全链路性能优化.md)
 ### 前端监控
 - [rrweb](https://github.com/rrweb-io/rrweb)录屏重放
-
+- [搭建前端监控平台](book/5、性能优化/搭建前端监控平台.md)
 ## 6、程序员必备知识
 
 ### 编程
@@ -161,6 +160,7 @@
 ### 网络
 - http协议
 - [WebSocket](book/6、网页三剑客/WebSocket.md)
+- [Web安全攻防实战](book/6、网页三剑客/Web安全攻防实战.md)
 ### 服务端
 - [linux](book/6、程序员必备知识/linux.md)
 - [docker]()

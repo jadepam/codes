@@ -1,2 +1,7 @@
 node_modules
 .DS_Store
+book/5、性能优化/code/*
+book/2、js视图类框架/code/*
+vue3.0和react源码.md
+Web安全攻防实战.md
+搭建前端监控平台.md
