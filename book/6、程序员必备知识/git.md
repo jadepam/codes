@@ -80,6 +80,9 @@ git push origin branch -f
 - git revert 撤销某个提交
   git revert HEAD
   git push origin master
+- 撤销 merge
+
+git revert id -m 1
 
 5、放错分支（备份到新的分支）
 
