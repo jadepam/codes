@@ -1,63 +1,202 @@
-# 微前端架构(服务端微服务的理念应用到前端)：
-用途：用不同技术框架，去维护大型应用
-特点：技术无关性、业务独立、样式隔离、原生支持
+# 微前端架构实践指南
 
-基本构成：
-中心化路由，服务注册中心；
-标识化应用；
-设计一定的生命周期；
-部署和配置自动化；
+## 一、基础概念
+微前端是将服务端微服务的理念应用到前端的架构方案。
+### 1.1 什么是微前端
+- 将微服务理念应用到前端
+- 用于维护大型前端应用
+- 支持多技术栈并存
 
-主框架的作用：
-应用的发现和调度；
-转场动画、日志、上报；
-应用、css隔离影响；
-应用监控、降级、鉴权等；
-应用间通信机制；
+### 1.2 核心特性
+- 技术栈无关
+- 业务独立
+- 样式隔离
+- 原生支持
 
-## 1. 通过IFrame方式进行聚合
+### 1.3 架构组成
+1. **基础设施**
+   - 中心化路由
+   - 服务注册中心
+   - 应用标识系统
+   - 生命周期管理
+   - 自动化部署
 
-### 优点：沙盒模型、改动成本小
+2. **主框架能力**
+   - 应用调度
+   - 转场动画
+   - 日志上报
+   - 隔离机制
+   - 监控降级
+   - 应用通信
 
-### 缺点：
-#### iframe嵌入的显示区大小不容易控制
-解决方法：
-[element-resize-detector]
-原理：用该插件监听iframe元素高度，通过window.postMessage()传值给父标签，jsp页面通过 window.addEventListener('message',{})方法监听到高度变化并设置iframe父标签高度
+## 二、实现方案对比
 
-#### URL的记录完全无效，页面刷新不能够被记忆，刷新会返回首页，iframe功能之间跳转也无效
-解决方法：
-1、直接更改iframe的src，会产生重复的history
-2、直接createElement，替换原来的iframe
-3、iframe存储内部url的pathA与父页面的pathB,父页面刷新时onload，判断浏览器当前的window.location.pathname是否等于父页面的pathB，如果相等，直接将iframe的src替换为pathA
+### 2.1 IFrame方案
 
-存储方法：url传参数\cookies\ local/session storage
-#### iframe 阻塞 onload
-浏览器解析 => 解析HTML节点到DOM树 => DOM树解析完成（触发DOMContentLoaded） => 下载资源并解析资源（包括iframe） => 资源全部下载并解析完毕 => 页面加载完成（触发onload）
+#### 优点
+- 天然隔离
+- 接入简单
+- 快速部署
 
-1、异步处理
-2、onload之后再加载iframe内容src
+#### 缺点与解决方案
+1. **显示控制**
+   ```javascript
+   // 使用element-resize-detector
+   const erd = elementResizeDetectorMaker();
+   erd.listenTo(element, (element) => {
+     const height = element.offsetHeight;
+     window.postMessage({ height }, '*');
+   });
+   ```
 
-#### 兼容性差
+2. **URL管理**
+   ```javascript
+   // 存储状态
+   sessionStorage.setItem('iframe-path', path);
+   
+   // 恢复状态
+   window.onload = () => {
+     const path = sessionStorage.getItem('iframe-path');
+     if (path) {
+       iframe.src = path;
+     }
+   };
+   ```
 
-## 2. 使用WebComponent构建应用
+3. **性能优化**
+   ```javascript
+   // 异步加载
+   window.onload = () => {
+     setTimeout(() => {
+       iframe.src = url;
+     }, 0);
+   };
+   ```
 
-https://developer.mozilla.org/zh-CN/docs/Web/Web_Components
+### 2.2 WebComponent方案
+- 原生标准支持
+- 自定义元素
+- Shadow DOM隔离
+- HTML模板
 
-https://www.webcomponents.org/
+### 2.3 Single-SPA方案
 
-## 3. 在不同的框架之上设计通讯、加载机制，诸如 [Single-SPA](https://single-spa.js.org/)
+#### 核心API
+```javascript
+registerApplication({
+  name: 'app',
+  app: () => import('./app'),
+  activeWhen: '/app'
+});
+```
 
-[Single-SPA]
-single-spa-config：
-- 注册：registerApplication(name, howToLoad, activityFunction)
+#### 生命周期
+- bootstrap
+- mount
+- unmount
+- update
 
+### 2.4 Qiankun方案（推荐）
 
-howToLoad：返回promise的加载function或者已解析的Application（improt/export）
-生命周期：bootstrap、mount、unmount、unload（可选）
+#### 1. 基础配置
+```javascript
+// 主应用
+import { registerMicroApps, start } from 'qiankun';
 
-执行方法：Update更新
+registerMicroApps([{
+  name: 'react-app',
+  entry: '//localhost:3000',
+  container: '#container',
+  activeRule: '/react'
+}]);
 
-activityFunction：纯函数、将window.location作为参数提供
+start({ prefetch: true });
+```
 
-- 挂载：start()，在AJAX请求后再调用性能最佳
+#### 2. 子应用适配
+```javascript
+// webpack.config.js
+module.exports = {
+  output: {
+    library: `${name}-[name]`,
+    libraryTarget: 'umd'
+  }
+};
+
+// main.js
+export async function bootstrap() {}
+export async function mount(props) {}
+export async function unmount() {}
+```
+
+#### 3. 通信机制
+```javascript
+// 主应用
+const actions = initGlobalState(initialState);
+actions.onGlobalStateChange(state => {
+  console.log(state);
+});
+
+// 子应用
+export function mount(props) {
+  props.onGlobalStateChange((state, prev) => {
+    console.log(state, prev);
+  });
+}
+```
+
+## 三、最佳实践
+
+### 3.1 应用拆分
+- 业务维度划分
+- 技术栈统一
+- 团队边界清晰
+
+### 3.2 性能优化
+1. **加载策略**
+   - 预加载配置
+   - 按需加载
+   - 资源复用
+
+2. **沙箱优化**
+   ```javascript
+   start({
+     sandbox: {
+       strictStyleIsolation: true,
+       experimentalStyleIsolation: true
+     }
+   });
+   ```
+
+### 3.3 开发规范
+1. **样式隔离**
+   - CSS Modules
+   - BEM命名
+   - Shadow DOM
+
+2. **依赖管理**
+   - 共享依赖提取
+   - 版本统一
+   - 构建优化
+
+3. **发布流程**
+   - 独立部署
+   - 版本控制
+   - 灰度策略
+
+## 四、常见问题
+
+### 4.1 样式冲突
+- 开启严格隔离
+- 采用CSS Modules
+- 使用命名空间
+
+### 4.2 JS污染
+- 沙箱隔离
+- 共享依赖
+- 全局变量处理
+
+### 4.3 路由管理
+- 路由注册
+- 状态同步
+- 跨应用跳转

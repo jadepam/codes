@@ -16,7 +16,7 @@
 
     修改：nginx.conf文件，导入配置
     ```
-    include ../conf.d/admin_test_cn.conf];
+    include ../conf.d/admin_test_cn.conf;
     include ../conf.d/api_test_cn.conf;
     include ../conf.d/test_cn.conf;
     include ../conf.d/static_test_cn.conf;
